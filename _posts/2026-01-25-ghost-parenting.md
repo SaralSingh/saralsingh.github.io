@@ -3,6 +3,8 @@ title: "Ghost Parenting"
 date: 2026-01-25
 description: "How imaginary fear like ghosts is used to control children and the long-term psychological effect it leaves behind."
 image: /assets/images/dark-room.jpg
+layout: single
+classes: narrow
 ---
 
 
