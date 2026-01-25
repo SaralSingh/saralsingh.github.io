@@ -1,4 +1,5 @@
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 sass:
   style: compressed
 
@@ -8,7 +9,6 @@ plugins:
   - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-feed
-
 
 title: "Saral Singh Blog"
 name: "Saral Singh"
@@ -22,4 +22,5 @@ author:
     - label: "Portfolio"
       url: "https://saralsingh.space"
 
-
+after_footer_scripts:
+  - /assets/css/custom.css
