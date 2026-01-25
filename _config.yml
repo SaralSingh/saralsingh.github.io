@@ -1,6 +1,4 @@
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-head_scripts:
-  - /assets/css/custom.css
 
 sass:
   style: compressed
@@ -24,5 +22,3 @@ author:
     - label: "Portfolio"
       url: "https://saralsingh.space"
 
-after_footer_scripts:
-  - /assets/css/custom.css
