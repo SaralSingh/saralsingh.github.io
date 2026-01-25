@@ -1,4 +1,6 @@
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+sass:
+  style: compressed
 
 minimal_mistakes_skin: "default"
 

@@ -1,0 +1,11 @@
+/* Override Minimal Mistakes content width and padding */
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page__content {
+  padding-left: 32px;
+  padding-right: 32px;
+}
