@@ -1,0 +1,9 @@
+@import "minimal-mistakes";
+
+/* Force readable width */
+.page__inner-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
