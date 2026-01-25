@@ -1,6 +1,21 @@
-.entry__content {
-  max-width: 860px;
-  margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+/* _sass/minimal-mistakes/_custom.scss */
+
+/* Add padding to the main content wrapper */
+.page__inner-wrap {
+  padding-left: 5%;   /* Adds 5% space on the left */
+  padding-right: 5%;  /* Adds 5% space on the right */
+}
+
+/* Optional: Make the reading column narrower for better readability */
+.page__content {
+  max-width: 900px;   /* Prevents lines from getting too long */
+  margin-left: auto;  /* Centers the content */
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .page__inner-wrap {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
 }
