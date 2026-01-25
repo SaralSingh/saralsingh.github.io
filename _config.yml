@@ -4,6 +4,8 @@ minimal_mistakes_skin: "default"
 
 plugins:
   - jekyll-include-cache
+  - jekyll-sitemap
+
 
 title: "Saral Singh Blog"
 name: "Saral Singh"
