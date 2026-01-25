@@ -1,0 +1,15 @@
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+minimal_mistakes_skin: "default"
+
+plugins:
+  - jekyll-include-cache
+
+title: "Saral Singh Blog"
+name: "Saral Singh"
+description: "Thoughts and experiences by Saral Singh"
+
+url: "https://saralsingh.github.io"
+
+author:
+  name: "Saral Singh"
