@@ -151,24 +151,72 @@ As I grew older, something slowly started changing inside me.
 
 I gained more maturity. I learned to think more logically. I understood how the mind works. And without realizing it, the thoughts that were once filled with imaginary fear started getting replaced with logical explanations.
 
-The brain hates incomplete information.
+I learned something very simple:
 
-As a child, my mind used to say,  
-“What if something is there?”
+> The brain hates incomplete information.
 
-Now, my mind says,  
-“It’s probably a rat.”  
-“Maybe it’s the wind.”  
-“Something must have fallen.”
+If you hear a noise at night, the brain wants an explanation.
 
-Earlier, the unknown meant danger.  
+As a child, my mind used to say,
+
+> “What if something is there?”
+
+Now, my mind says,
+
+> “It’s probably a rat.”  
+> “Maybe it’s the wind.”  
+> “Something must have fallen.”
+
+Earlier, the unknown meant danger.
+
 Now, the unknown means curiosity.
 
+---
+
+Today, I can stay alone at home without any problem. In fact, I sometimes enjoy it — an empty room, no noise, just me and my PC, with the internet giving me access to all the information in the world.
+
 Somewhere along the way, I overcame that fear.
+
+I don’t even know exactly when it happened. There was no single moment. It just faded as my understanding of reality became stronger than my childhood imagination.
+
+---
+
+But I still notice something interesting.
+
+Some of my friends still feel uncomfortable staying alone at home. Some casually say, “Yaar, bhoot-voot kuch toh hota hoga. Itna log bolte hain.”
+
+At that point, I realize they still carry a small part of that childhood conditioning — a subtle, indirect belief in ghosts.
+
+---
+
+Sometimes I still ask myself a strange question.
+
+If I am placed in an unusual, abandoned, or scary-looking place, will my childhood ghost fear try to take control again? Will that old imagination attempt to overpower my adult, logical mind?
+
+Or will I think the way I usually do now?
+
+Will my mind still look for real explanations — maybe an animal, maybe some suspicious people, maybe an unsafe environment?
+
+---
+
+I don’t know the exact answer to that.
+
+But I do know one thing for sure.
+
+> Today, my first instinct is no longer about ghosts.
+
+It is about real-world possibilities.
+
+The fear may still exist in such places.
+
+But now, it is connected to reality, not imagination.
+
+And that is a very big difference.
 
 ---
 
 ## Coming Back to That Child
+
 
 When I look back at that 4–5-year-old child being scared of “Kamla,” I don’t see a funny parenting trick anymore.
 
