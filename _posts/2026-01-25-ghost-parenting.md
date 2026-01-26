@@ -14,7 +14,7 @@ classes: narrow
   <img src="/assets/images/dark-room.jpg" width="700" alt="Dark silent room">
 </p>
 
-Hey guys, my name is Saral and today I want to share something serious that I have been noticing around me — something I have also personally experienced in my childhood.
+Hey guys, my name is Atharv and today I want to share something serious that I have been noticing around me — something I have also personally experienced in my childhood.
 
 So let’s start from a recent incident.
 
