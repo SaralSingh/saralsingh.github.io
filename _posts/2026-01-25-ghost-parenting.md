@@ -70,7 +70,7 @@ Not the fear of monsters.
 
 But the fear of something that could be there, even if you couldn’t see it.
 
-That uncertainty is what creates the deepest fear.
+> That uncertainty is what creates the deepest fear.
 
 As a child, my imagination was much stronger than my logic. I did not have enough knowledge. I was not capable of critical or rational thinking.
 
@@ -84,6 +84,7 @@ And that “what if” was enough to make the fear feel completely real.
 
 And I didn’t just feel this fear in theory. I lived it, many nights, in very real situations.
 
+
 ---
 
 ## Incident 1 — Power Cut
@@ -94,6 +95,8 @@ I was a child who was deeply afraid of ghosts. So much so that while sleeping at
 
 For me, that hand was proof that nothing bad could happen.
 
+---
+
 Many nights, around 2 AM, there would be a sudden power cut. In my locality, this was common. Whenever it happened, all the family members would go to the roof to sleep in the open air.
 
 But sometimes, I would still be asleep when they left.
@@ -102,8 +105,11 @@ And then I would wake up.
 
 I would open my eyes and see complete darkness. No light. No sound. No one beside me.
 
-In that moment, my mind did not think,  
-“Everyone must be on the roof.”
+---
+
+In that moment, my mind did not think,
+
+> “Everyone must be on the roof.”
 
 Instead, the fear I had stored in my imagination took control.
 
@@ -117,11 +123,14 @@ I ran out of the room, through the darkness, towards the stairs and straight to 
 
 Like the Flash, without looking back even once.
 
+---
+
 Today, I know there was nothing there.
 
 But back then, the fear felt completely real.
 
 ---
+
 
 ## Incident 2 — Alone in the Room
 
@@ -137,13 +146,15 @@ But this never worked at night.
 
 At night, I could not even imagine myself sitting alone in a room. The idea itself was uncomfortable.
 
+---
+
 Looking back now, I realize something important.
 
-I wasn’t afraid of being alone.
-
-I was afraid of what my mind had been trained to imagine when I was alone.
+> I wasn’t afraid of being alone.  
+> I was afraid of what my mind had been trained to imagine when I was alone.
 
 ---
+
 
 ## Growing Up — Rewiring the Fear
 
@@ -217,7 +228,6 @@ And that is a very big difference.
 
 ## Coming Back to That Child
 
-
 When I look back at that 4–5-year-old child being scared of “Kamla,” I don’t see a funny parenting trick anymore.
 
 I see the beginning of a fear being planted.
@@ -226,13 +236,15 @@ Right now, it looks harmless.
 
 But what no one sees is what gets installed inside him.
 
-Darkness will start to feel uncomfortable.  
-Silence will start to feel unsafe.  
-Being alone will start to feel scary.
+> Darkness will start to feel uncomfortable.  
+> Silence will start to feel unsafe.  
+> Being alone will start to feel scary.
 
 This is what I call **Ghost Parenting**.
 
 Using imaginary fear for short-term control, without realizing the long-term effect it leaves on a child’s mind.
+
+---
 
 Children should be taught fear — but of real things.
 
@@ -240,12 +252,15 @@ Strangers. Unsafe places. Electricity. Fire. Traffic.
 
 Not imaginary ghosts.
 
+---
+
 They believe what we tell them.  
 And they carry it longer than we think.
 
 I didn’t overcome ghosts.  
 I had to rewire the fear that was planted in me as a child.
 
-**A shortcut for control today can become a long-term fear for them.**
+> **A shortcut for control today can become a long-term fear for them.**
 
 And maybe, if we stop using ghosts to control children, they won’t have to fight the same fear someday.
+
