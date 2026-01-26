@@ -7,9 +7,6 @@ layout: single
 classes: narrow
 ---
 
-
-# How PHP Sessions Actually Work — From Browser Request to Final Response
-
 ## Section 1 — Introduction
 
 Before we understand how PHP sessions work, we need to understand something more fundamental:
@@ -47,7 +44,7 @@ Without this waiter:
 ### The Request–Response Cycle
 
 <p align="left">
-  <img src="../assets/images/php-session/Request–ResponseCycle.png" width="700" alt="Request–Response Cycle">
+  <img src="/assets/images/php-session/Request–ResponseCycle.png" width="700" alt="Request–Response Cycle">
 </p>
 
 Every interaction between a browser and a server follows the same two steps:
@@ -227,7 +224,7 @@ This difference is crucial because `session_start()` behaves differently.
 ## Case A — Cookie Is Present
 
 <p align="left">
-  <img src="../assets/images/php-session/php-session-flow-with-cookie-session-start-diagram.png" width="700" alt="Diagram showing how PHP session_start works when PHPSESSID cookie is present, loading session data from sess file into $_SESSION
+  <img src="/assets/images/php-session/php-session-flow-with-cookie-session-start-diagram.png" width="700" alt="Diagram showing how PHP session_start works when PHPSESSID cookie is present, loading session data from sess file into $_SESSION
 ">
 </p>
 
@@ -256,7 +253,7 @@ PHP did not remember — it **reloaded** the session file into memory.
 ## Case B — No Cookie Present (First Visit)
 
 <p align="left">
-  <img src="../assets/images/php-session/php-session-creation-first-visit-no-cookie-diagram.png" width="700" alt="Diagram explaining how PHP creates a new session ID and sends PHPSESSID cookie on first visit when session_start is called
+  <img src="/assets/images/php-session/php-session-creation-first-visit-no-cookie-diagram.png" width="700" alt="Diagram explaining how PHP creates a new session ID and sends PHPSESSID cookie on first visit when session_start is called
 ">
 </p>
 
