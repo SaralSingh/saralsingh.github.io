@@ -12,258 +12,211 @@ categories: [docker, laravel, wsl, setup]
 tags: [docker, laravel, wsl, windows, vscode]
 ---
 
-# Windows → WSL → Docker → VS Code (WSL) → Laravel
-## One-Time Machine Setup + Daily Workflow (BookStack Example)
+# Windows → WSL → Docker → VS Code (WSL) → Laravel Guide
+    
+    **One-Time Machine Setup + Daily Workflow (BookStack Example)**
+    
+    This is the **correct machine setup** for running Dockerized Laravel projects on Windows.
+    
+    > ⚠️ **Warning:** If you do this in the wrong order or on the wrong drive, you will face:
+    > * Permission issues
+    > * Slow performance
+    > * Docker volume mount problems
+    > * Random Laravel `storage/cache` bugs
+    
+    ---
+    
+    ## 🏗️ PART 1: One-Time Machine Setup
+    
+    ### 🧱 STEP 1 — Install WSL + Ubuntu (FIRST)
+    1. Open **PowerShell as Administrator**.
+    2. Run the following command:
+       ```powershell
+       wsl --install -d Ubuntu
 
-This is the **correct machine setup** for running Dockerized Laravel projects on Windows.
+3.  **Restart your computer** when asked.
+    
+4.  After restart, the Ubuntu terminal will open automatically.
+    
+    -   Set your **username**.
+        
+    -   Set your **password**.
+        
 
-If you do this in the wrong order, you will face:
+_You now have a real Linux environment inside Windows._
 
-- Permission issues
-- Slow performance
-- Docker volume mount problems
-- Random Laravel `storage/cache` bugs
+### 🧱 STEP 2 — Update WSL Kernel (Required for Docker)
 
-Follow **exactly**.
+Run this in PowerShell or Command Prompt:
 
-...
+PowerShell
 
-## STEP 1 — Install WSL + Ubuntu (FIRST)
+    wsl --update
 
-Open **PowerShell as Administrator**:
+_This avoids Docker ↔ WSL compatibility issues._
 
-```powershell
-wsl --install -d Ubuntu
-```
+### 🧱 STEP 3 — Install Docker Desktop (Windows)
 
-Restart when asked.
+1.  Download and install **Docker Desktop for Windows**.
+    
+2.  Open Docker Desktop.
+    
+3.  Wait until the bottom left status bar shows: **Docker is running**.
+    
 
-After restart:
+### 🧱 STEP 4 — Connect Docker with WSL (Critical Step)
 
-- Ubuntu terminal opens
-- Set your username
-- Set your password
+1.  Open Docker Desktop.
+    
+2.  Go to **Settings (⚙️) → Resources → WSL Integration**.
+    
+3.  Check the box **Enable integration with my default WSL distro**.
+    
+4.  **Turn ON** the toggle next to `Ubuntu`.
+    
+5.  Click **Apply & Restart**.
+    
 
-You now have a real Linux environment inside Windows.
+_Now Docker runs inside Linux, not Windows._
 
----
+### 🧱 STEP 5 — Verify Docker inside WSL
 
-## STEP 2 — Update WSL Kernel (Required for Docker)
+1.  Open your **Ubuntu terminal**.
+    
+2.  Run:
+    
+    Bash
+    
+        docker --version
+    
 
-```powershell
-wsl --update
-```
+_If a version number appears, integration is successful._
 
-This avoids Docker ↔ WSL compatibility issues.
+### 🧱 STEP 6 — Fix Docker Permission (Very Important)
 
----
+Inside your **Ubuntu** terminal run:
 
-## STEP 3 — Install Docker Desktop (Windows)
+Bash
 
-- Download and install Docker Desktop
-- Open Docker Desktop
-- Wait until it shows: **Docker is running**
+    sudo usermod -aG docker $USER
 
----
+1.  **Close** the Ubuntu window completely.
+    
+2.  **Open** Ubuntu again.
+    
+3.  Test by running:
+    
+    Bash
+    
+        docker ps
+    
 
-## STEP 4 — Connect Docker with WSL (Critical Step)
+_No permission error should appear._
 
-Open:
+### 🧱 STEP 7 — The Golden Rule (Most Important)
 
-**Docker Desktop → Settings → Resources → WSL Integration**
+> ❌ **NEVER** use Windows drives for Docker projects (`/mnt/c`, `/mnt/d`, etc.).
+> 
+> This is the root cause of slow performance and file permission bugs.
 
-- Enable WSL Integration
-- Turn ON **Ubuntu**
-- Click **Apply & Restart**
+> ✅ **ALWAYS** work inside the Linux home directory:
+> 
+> `/home/your-username`
 
-Now Docker runs inside Linux, not Windows.
-
----
-
-## STEP 5 — Verify Docker inside WSL
-
-Open Ubuntu terminal:
-
-```bash
-docker --version
-```
-
-If version appears → integration successful.
-
----
-
-## STEP 6 — Fix Docker Permission (Very Important)
+### 🧱 STEP 8 — Clone Project Inside Linux Home
 
 Inside Ubuntu:
 
-```bash
-sudo usermod -aG docker $USER
-```
-
-Close Ubuntu. Open it again.
-
-Test:
-
-```bash
-docker ps
-```
-
-No permission error should appear.
-
----
-
-## STEP 7 — Golden Rule (Most Important)
-
-Never use Windows drives for Docker projects:
-
-```
-/mnt/c
-/mnt/d
-/mnt/e
-```
-
-This is the root cause of most Docker + Laravel problems.
-
-Always work inside Linux home:
-
-```
-/home/your-username
-```
-
----
-
-## STEP 8 — Clone Project Inside Linux Home (Example: BookStack)
-
-```bash
-cd ~
-git clone https://github.com/BookStackApp/BookStack.git
-cd BookStack
-```
-
----
-
-## STEP 9 — Open in VS Code (WSL) → Then Run Docker
-
-From Ubuntu (inside project folder):
-
-```bash
-code .
-```
-
-Check the bottom-left of VS Code. It must show:
-
-`WSL: Ubuntu`
-
-Open the terminal inside VS Code using the default terminal shortcut.
-
-
-Start Docker containers from this terminal:
-
-```bash
-docker compose up -d
-```
-
-Open in browser:
-
-```
-http://localhost:8080
-```
-
-Project should now be running.
-
----
-
-# Daily Workflow — Start / Stop Routine
-
-This is the exact routine to start and stop your Laravel project (BookStack or any Docker-based app) using **WSL (Ubuntu)** and **VS Code**.
-
----
-
-## START WORK (from WSL)
-
-### 1) Open Ubuntu (WSL)
-- Start Menu → **Ubuntu**
-- OR PowerShell:
-
-```bash
-wsl
-```
-
----
-
-### 2) Go to your Linux home
-
-```bash
-cd ~
-```
-
----
-
-### 3) Go to project folder
-
-```bash
-cd BookStack
-```
-
----
-
-### 4) Start Docker containers
-
-```bash
-docker compose up -d
-```
-
----
-
-### 5) Open VS Code in WSL mode
-
-```bash
-code .
-```
-
-Check bottom-left in VS Code shows:
-
-```
-WSL: Ubuntu
-```
-
----
-
-### 6) Open in browser
-
-```
-http://localhost:8080
-```
-
-Now start coding.
-
----
-
-## END WORK (proper shutdown)
-
-### 1) Close VS Code remote connection
-
-In VS Code:
-
-- Press: `Ctrl + Shift + P`
-- Type: `Close Remote Connection`
-- Close the VS Code window
-
----
-
-### 2) Stop Docker containers (from WSL)
-
-```bash
-docker compose down
-```
-
----
-
-### 3) Exit Ubuntu
-
-```bash
-exit
-```
-
----
-
+Bash
+
+    cd ~
+    git clone [https://github.com/BookStackApp/BookStack.git](https://github.com/BookStackApp/BookStack.git)
+    cd BookStack
+
+### 🧱 STEP 9 — Open in VS Code (WSL) → Then Run Docker
+
+1.  From inside the project folder in Ubuntu:
+    
+    Bash
+    
+        code .
+    
+2.  VS Code will open. **Check the bottom-left corner**. It must show:
+    
+    > **\>< WSL: Ubuntu**
+    
+3.  Open the terminal inside VS Code (`` Ctrl + ` ``).
+    
+4.  Start Docker containers:
+    
+    Bash
+    
+        docker compose up -d
+    
+5.  Open your browser to: [http://localhost:8080](https://www.google.com/search?q=http://localhost:8080&authuser=1)
+    
+
+* * *
+
+## 🧭 PART 2: Daily Workflow — Start / Stop Routine
+
+This is the exact routine to start and stop your Laravel/PHP projects using WSL.
+
+### 🟢 START WORK (from WSL)
+
+1.  **Open Ubuntu (WSL)**
+    
+    -   Start Menu → Ubuntu OR PowerShell type `wsl`
+        
+2.  **Go to your Linux home**
+    
+    Bash
+    
+        cd ~
+    
+3.  **Go to project folder**
+    
+    Bash
+    
+        cd BookStack
+    
+4.  **Start Docker containers**
+    
+    Bash
+    
+        docker compose up -d
+    
+5.  **Open VS Code in WSL mode**
+    
+    Bash
+    
+        code .
+    
+    _Check bottom-left confirms: `WSL: Ubuntu`_
+    
+6.  **Open in browser**
+    
+    -   [http://localhost:8080](https://www.google.com/search?q=http://localhost:8080&authuser=1)
+        
+
+### 🔴 END WORK (Proper Shutdown)
+
+1.  **Close VS Code remote connection**
+    
+    -   Press: `Ctrl + Shift + P`
+        
+    -   Type: `Close Remote Connection`
+        
+    -   Close the window.
+        
+2.  **Stop Docker containers (from WSL terminal)**
+    
+    Bash
+    
+        docker compose down
+    
+3.  **Exit Ubuntu**
+    
+    Bash
+    
+        exit
