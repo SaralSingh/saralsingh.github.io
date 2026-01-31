@@ -1,19 +1,29 @@
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
+# --- VERY IMPORTANT FOR POSTS TO RENDER ---
+baseurl: ""
+permalink: /:title/
+
+collections:
+  posts:
+    output: true
+
+# --- Theme / Style ---
+minimal_mistakes_skin: "dark"
+
 sass:
   style: compressed
 
-minimal_mistakes_skin: "dark"
-
+# --- Plugins allowed by GitHub Pages ---
 plugins:
   - jekyll-include-cache
   - jekyll-sitemap
   - jekyll-feed
 
+# --- Site Info ---
 title: "Saral Singh Blog"
 name: "Saral Singh"
 description: "Thoughts and experiences by Saral Singh"
-
 url: "https://blog.saralsingh.space"
 
 author:
@@ -21,4 +31,3 @@ author:
   links:
     - label: "Portfolio"
       url: "https://saralsingh.space"
-
