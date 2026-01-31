@@ -7,7 +7,7 @@ layout: single
 classes: narrow
 ---
 
-## Section 1 — Introduction
+## Section 1 — Introduction - A deep dive into how PHP sessions work internally using cookies, session IDs
 
 Before we understand how PHP sessions work, we need to understand something more fundamental:
 
