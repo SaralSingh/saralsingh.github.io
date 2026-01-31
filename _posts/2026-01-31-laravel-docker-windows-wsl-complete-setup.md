@@ -6,6 +6,7 @@ layout: single
 classes: narrow
 ---
 
+
 # 🚀 Windows → WSL → Docker → VS Code (WSL) → Laravel
 ## One-Time Machine Setup + Daily Workflow (BookStack Example)
 
