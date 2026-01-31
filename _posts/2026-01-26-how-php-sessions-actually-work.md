@@ -1,13 +1,15 @@
 ---
 title: "How PHP Sessions Actually Work — From Browser Request to Final Response"
 date: 2026-01-26
-description: "A deep dive into how PHP sessions work internally using cookies, session IDs, and server-side files to make HTTP feel stateful."
-image: /assets/images/php-session/php-sessions-overview-browser-server-cookie-session-diagram.png
 layout: single
 classes: narrow
+description: "A deep dive into how PHP sessions work internally using cookies, session IDs, and server-side files to make HTTP feel stateful."
+image: /assets/images/php-session/php-sessions-overview-browser-server-cookie-session-diagram.png
+categories: [php, backend]
+tags: [php-sessions, cookies, http, state-management]
 ---
 
-## Section 1 — Introduction - A deep dive into how PHP sessions work internally using cookies, session IDs
+## Section 1 — Introduction: How PHP Sessions Really Work Behind the Scenes
 
 Before we understand how PHP sessions work, we need to understand something more fundamental:
 
