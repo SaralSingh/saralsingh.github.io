@@ -12,7 +12,7 @@ categories: [docker, laravel, wsl, setup]
 tags: [docker, laravel, wsl, windows, vscode]
 ---
 
-# 🚀 Windows → WSL → Docker → VS Code (WSL) → Laravel
+# Windows → WSL → Docker → VS Code (WSL) → Laravel
 ## One-Time Machine Setup + Daily Workflow (BookStack Example)
 
 This is the **correct machine setup** for running Dockerized Laravel projects on Windows.
@@ -26,7 +26,7 @@ If you do this in the wrong order, you will face:
 
 Follow **exactly**.
 
----
+...
 
 ## 🧱 STEP 1 — Install WSL + Ubuntu (FIRST)
 
