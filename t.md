@@ -1,17 +1,3 @@
----
-title: "Running Laravel with Docker on Windows the Right Way (WSL Setup Guide)"
-date: 2026-01-31 10:00:00 +0530
-layout: single
-classes: wide
-author_profile: false
-read_time: true
-toc: true
-toc_sticky: true
-description: "A battle-tested guide to correctly setting up WSL, Docker Desktop, and VS Code on Windows to run Laravel projects without permission issues or Docker volume errors."
-categories: [docker, laravel, wsl, setup]
-tags: [docker, laravel, wsl, windows, vscode]
----
-
 Windows → WSL → Docker → VS Code (WSL) → Laravel
 ================================================
 
