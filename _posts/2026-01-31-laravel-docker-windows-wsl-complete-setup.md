@@ -1,222 +1,263 @@
 ---
 title: "Running Laravel with Docker on Windows the Right Way (WSL Setup Guide)"
-date: 2026-01-31 10:00:00 +0530
-layout: single
-classes: wide
-author_profile: false
-read_time: true
-toc: true
-toc_sticky: true
+date: 2026-01-31
 description: "A battle-tested guide to correctly setting up WSL, Docker Desktop, and VS Code on Windows to run Laravel projects without permission issues or Docker volume errors."
 categories: [docker, laravel, wsl, setup]
 tags: [docker, laravel, wsl, windows, vscode]
 ---
 
-# Windows → WSL → Docker → VS Code (WSL) → Laravel Guide
-    
-    **One-Time Machine Setup + Daily Workflow (BookStack Example)**
-    
-    This is the **correct machine setup** for running Dockerized Laravel projects on Windows.
-    
-    > ⚠️ **Warning:** If you do this in the wrong order or on the wrong drive, you will face:
-    > * Permission issues
-    > * Slow performance
-    > * Docker volume mount problems
-    > * Random Laravel `storage/cache` bugs
-    
-    ---
-    
-    ## 🏗️ PART 1: One-Time Machine Setup
-    
-    ### 🧱 STEP 1 — Install WSL + Ubuntu (FIRST)
-    1. Open **PowerShell as Administrator**.
-    2. Run the following command:
-       ```powershell
-       wsl --install -d Ubuntu
+# 🚀 Windows → WSL → Docker → VS Code (WSL) → Laravel
+## One-Time Machine Setup + Daily Workflow (BookStack Example)
 
-3.  **Restart your computer** when asked.
-    
-4.  After restart, the Ubuntu terminal will open automatically.
-    
-    -   Set your **username**.
-        
-    -   Set your **password**.
-        
+This is the **correct machine setup** for running Dockerized Laravel projects on Windows.
 
-_You now have a real Linux environment inside Windows._
+If you do this in the wrong order, you will face:
 
-### 🧱 STEP 2 — Update WSL Kernel (Required for Docker)
+- Permission issues
+- Slow performance
+- Docker volume mount problems
+- Random Laravel `storage/cache` bugs
 
-Run this in PowerShell or Command Prompt:
+Follow **exactly**.
 
-PowerShell
+---
 
-    wsl --update
+## 🧱 STEP 1 — Install WSL + Ubuntu (FIRST)
 
-_This avoids Docker ↔ WSL compatibility issues._
+Open **PowerShell as Administrator**:
 
-### 🧱 STEP 3 — Install Docker Desktop (Windows)
+```powershell
+wsl --install -d Ubuntu
+```
 
-1.  Download and install **Docker Desktop for Windows**.
-    
-2.  Open Docker Desktop.
-    
-3.  Wait until the bottom left status bar shows: **Docker is running**.
-    
+Restart when asked.
 
-### 🧱 STEP 4 — Connect Docker with WSL (Critical Step)
+After restart:
 
-1.  Open Docker Desktop.
-    
-2.  Go to **Settings (⚙️) → Resources → WSL Integration**.
-    
-3.  Check the box **Enable integration with my default WSL distro**.
-    
-4.  **Turn ON** the toggle next to `Ubuntu`.
-    
-5.  Click **Apply & Restart**.
-    
+- Ubuntu terminal opens
+- Set your username
+- Set your password
 
-_Now Docker runs inside Linux, not Windows._
+You now have a real Linux environment inside Windows.
 
-### 🧱 STEP 5 — Verify Docker inside WSL
+---
 
-1.  Open your **Ubuntu terminal**.
-    
-2.  Run:
-    
-    Bash
-    
-        docker --version
-    
+## 🧱 STEP 2 — Update WSL Kernel (Required for Docker)
 
-_If a version number appears, integration is successful._
+```powershell
+wsl --update
+```
 
-### 🧱 STEP 6 — Fix Docker Permission (Very Important)
+This avoids Docker ↔ WSL compatibility issues.
 
-Inside your **Ubuntu** terminal run:
+---
 
-Bash
+## 🧱 STEP 3 — Install Docker Desktop (Windows)
 
-    sudo usermod -aG docker $USER
+- Download and install Docker Desktop
+- Open Docker Desktop
+- Wait until it shows: **Docker is running**
 
-1.  **Close** the Ubuntu window completely.
-    
-2.  **Open** Ubuntu again.
-    
-3.  Test by running:
-    
-    Bash
-    
-        docker ps
-    
+---
 
-_No permission error should appear._
+## 🧱 STEP 4 — Connect Docker with WSL (Critical Step)
 
-### 🧱 STEP 7 — The Golden Rule (Most Important)
+Open:
 
-> ❌ **NEVER** use Windows drives for Docker projects (`/mnt/c`, `/mnt/d`, etc.).
-> 
-> This is the root cause of slow performance and file permission bugs.
+**Docker Desktop → Settings → Resources → WSL Integration**
 
-> ✅ **ALWAYS** work inside the Linux home directory:
-> 
-> `/home/your-username`
+- Enable WSL Integration
+- Turn ON **Ubuntu**
+- Click **Apply & Restart**
 
-### 🧱 STEP 8 — Clone Project Inside Linux Home
+Now Docker runs inside Linux, not Windows.
+
+---
+
+## 🧱 STEP 5 — Verify Docker inside WSL
+
+Open Ubuntu terminal:
+
+```bash
+docker --version
+```
+
+If version appears → integration successful.
+
+---
+
+## 🧱 STEP 6 — Fix Docker Permission (Very Important)
 
 Inside Ubuntu:
 
-Bash
+```bash
+sudo usermod -aG docker $USER
+```
 
-    cd ~
-    git clone [https://github.com/BookStackApp/BookStack.git](https://github.com/BookStackApp/BookStack.git)
-    cd BookStack
+Close Ubuntu. Open it again.
 
-### 🧱 STEP 9 — Open in VS Code (WSL) → Then Run Docker
+Test:
 
-1.  From inside the project folder in Ubuntu:
-    
-    Bash
-    
-        code .
-    
-2.  VS Code will open. **Check the bottom-left corner**. It must show:
-    
-    > **\>< WSL: Ubuntu**
-    
-3.  Open the terminal inside VS Code (`` Ctrl + ` ``).
-    
-4.  Start Docker containers:
-    
-    Bash
-    
-        docker compose up -d
-    
-5.  Open your browser to: [http://localhost:8080](https://www.google.com/search?q=http://localhost:8080&authuser=1)
-    
+```bash
+docker ps
+```
 
-* * *
+No permission error should appear.
 
-## 🧭 PART 2: Daily Workflow — Start / Stop Routine
+---
 
-This is the exact routine to start and stop your Laravel/PHP projects using WSL.
+## 🧱 STEP 7 — Golden Rule (Most Important)
 
-### 🟢 START WORK (from WSL)
+❌ Never use Windows drives for Docker projects:
 
-1.  **Open Ubuntu (WSL)**
-    
-    -   Start Menu → Ubuntu OR PowerShell type `wsl`
-        
-2.  **Go to your Linux home**
-    
-    Bash
-    
-        cd ~
-    
-3.  **Go to project folder**
-    
-    Bash
-    
-        cd BookStack
-    
-4.  **Start Docker containers**
-    
-    Bash
-    
-        docker compose up -d
-    
-5.  **Open VS Code in WSL mode**
-    
-    Bash
-    
-        code .
-    
-    _Check bottom-left confirms: `WSL: Ubuntu`_
-    
-6.  **Open in browser**
-    
-    -   [http://localhost:8080](https://www.google.com/search?q=http://localhost:8080&authuser=1)
-        
+```
+/mnt/c
+/mnt/d
+/mnt/e
+```
 
-### 🔴 END WORK (Proper Shutdown)
+This is the root cause of most Docker + Laravel problems.
 
-1.  **Close VS Code remote connection**
-    
-    -   Press: `Ctrl + Shift + P`
-        
-    -   Type: `Close Remote Connection`
-        
-    -   Close the window.
-        
-2.  **Stop Docker containers (from WSL terminal)**
-    
-    Bash
-    
-        docker compose down
-    
-3.  **Exit Ubuntu**
-    
-    Bash
-    
-        exit
+✅ Always work inside Linux home:
+
+```
+/home/your-username
+```
+
+---
+
+## 🧱 STEP 8 — Clone Project Inside Linux Home (Example: BookStack)
+
+```bash
+cd ~
+git clone https://github.com/BookStackApp/BookStack.git
+cd BookStack
+```
+
+---
+
+## 🧱 STEP 9 — Open in VS Code (WSL) → Then Run Docker
+
+From Ubuntu (inside project folder):
+
+```bash
+code .
+```
+
+Check the bottom-left of VS Code. It must show:
+
+`WSL: Ubuntu`
+
+Open the terminal inside VS Code using the default terminal shortcut.
+
+
+Start Docker containers from this terminal:
+
+```bash
+docker compose up -d
+```
+
+Open in browser:
+
+```
+http://localhost:8080
+```
+
+Project should now be running.
+
+---
+
+# 🧭 Daily Workflow — Start / Stop Routine
+
+This is the exact routine to start and stop your Laravel project (BookStack or any Docker-based app) using **WSL (Ubuntu)** and **VS Code**.
+
+---
+
+## 🟢 START WORK (from WSL)
+
+### 1) Open Ubuntu (WSL)
+- Start Menu → **Ubuntu**
+- OR PowerShell:
+
+```bash
+wsl
+```
+
+---
+
+### 2) Go to your Linux home
+
+```bash
+cd ~
+```
+
+---
+
+### 3) Go to project folder
+
+```bash
+cd BookStack
+```
+
+---
+
+### 4) Start Docker containers
+
+```bash
+docker compose up -d
+```
+
+---
+
+### 5) Open VS Code in WSL mode
+
+```bash
+code .
+```
+
+Check bottom-left in VS Code shows:
+
+```
+WSL: Ubuntu
+```
+
+---
+
+### 6) Open in browser
+
+```
+http://localhost:8080
+```
+
+Now start coding.
+
+---
+
+## 🔴 END WORK (proper shutdown)
+
+### 1) Close VS Code remote connection
+
+In VS Code:
+
+- Press: `Ctrl + Shift + P`
+- Type: `Close Remote Connection`
+- Close the VS Code window
+
+---
+
+### 2) Stop Docker containers (from WSL)
+
+```bash
+docker compose down
+```
+
+---
+
+### 3) Exit Ubuntu
+
+```bash
+exit
+```
+
+---
+
