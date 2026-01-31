@@ -150,17 +150,12 @@ From Ubuntu (inside project folder):
 code .
 ```
 
-Check bottom-left of VS Code. It must show:
+Check the bottom-left of VS Code. It must show:
 
-```
-WSL: Ubuntu
-```
+`WSL: Ubuntu`
 
-Open terminal inside VS Code:
+Open the terminal inside VS Code using the default terminal shortcut.
 
-```
-Ctrl + `
-```
 
 Start Docker containers from this terminal:
 
