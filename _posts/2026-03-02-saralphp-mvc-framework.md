@@ -1,8 +1,12 @@
 ---
 title: "SaralPHP - Building a Custom PHP MVC Framework From Scratch"
 date: 2026-03-02
+layout: single
+classes: narrow
 description: "A deep dive into how I built SaralPHP: a lightweight mini-framework designed for building basic CRUD websites and understanding framework internals.Developed by Saral Singh"
 image: /assets/images/php-mvc/php-mvc.jpg
+categories: [php, backend]
+tags: [php, mvc, framework, backend]
 ---
 
 ## Building a Custom PHP MVC Framework From Scratch
@@ -11,7 +15,7 @@ image: /assets/images/php-mvc/php-mvc.jpg
   <img src="/assets/images/php-mvc/php-mvc.jpg" width="700" alt="PHP MVC Framework 3D Image">
 </p>
 
-Hey guys! My name is Saral, and I am currently a 3rd-year BCA student. Today, I want to take you under the hood of a project I recently finished building: **SaralPHP**.
+Hey guys! My name is Saral Singh, and today I want to take you under the hood of a project I recently finished building: **SaralPHP**.
 
 As a backend developer, it is incredibly easy to rely on massive frameworks like Laravel or Symfony. You type `php artisan make:controller`, magic happens, and you move on. But I wanted to understand the *magic*. I wanted to know exactly how routing engines parse URLs, how middleware pipelines chain together, and how an ORM securely binds data to a database. 
 
