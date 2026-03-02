@@ -4,7 +4,7 @@ date: 2026-03-02
 layout: single
 classes: narrow
 description: "A deep dive into how I built SaralPHP: a lightweight mini-framework designed for building basic CRUD websites and understanding framework internals.Developed by Saral Singh"
-image: /assets/images/php-mvc/php-mvc.jpg
+image: /assets/images/php-mvc/saralPHP.png
 categories: [php, backend]
 tags: [php, mvc, framework, backend]
 ---
@@ -12,7 +12,7 @@ tags: [php, mvc, framework, backend]
 ## Building a Custom PHP MVC Framework From Scratch
 
 <p align="center">
-  <img src="/assets/images/php-mvc/php-mvc.jpg" width="700" alt="PHP MVC Framework 3D Image">
+  <img src="/assets/images/php-mvc/saralPHP.png" width="700" alt="PHP MVC Framework 3D Image">
 </p>
 
 Hey guys! My name is Saral Singh, and today I want to take you under the hood of a project I recently finished building: **SaralPHP**.
