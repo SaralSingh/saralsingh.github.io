@@ -98,7 +98,7 @@ Building **SaralPHP** from scratch was an incredible learning experience. It str
 
 Today, I have a quite good mini MVC framework that I can use for basic CRUD websites instead of dealing with the massive overhead of larger frameworks. It includes `.env` environment loading and global exception handling, so it's quite handy for rapid development.
 
-If you are a student or developer looking to understand framework internals, or just want to poke around the source code, you can check it out below!
+If you’re a student or developer looking to understand framework internals, or just want to explore the source code, you can check it out below!
 
 **🔗 [View SaralPHP on GitHub](https://github.com/SaralSingh/SaralPHP)**  
 **🌐 [Live Demo](https://minimvc.wuaze.com)**
